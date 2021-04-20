@@ -1,0 +1,34 @@
+<h2>This is an admin page</h2>
+<table class="table table-striped col-md-12" id="resps">
+<thead>
+    <tr>
+			<th>Email</th>
+			<th>Response</th>
+			<th>Number</th>
+			<th>Other information</th>
+		</tr>
+</thead>
+
+<tbody>
+	<% @resps.each do |resp| %>
+      <tr>
+        <td>
+          <%= resp.email %>
+        </td>
+        <td>
+					<% if resp.resp %>
+ 						<div class="one">Yes</div>
+					<% else %>
+						<div class="two">No</div>
+					<% end %>
+        </td>
+        <td>
+          <%= resp.number %>
+        </td>
+        <td>
+          <%= resp.other %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
